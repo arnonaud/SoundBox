@@ -3,13 +3,12 @@ import css from './sound.case.component.css';
 class SoundCaseController{
     constructor(){
     }
-
-    $onChange(changes){
-        console.log(changes, this.onCheck);
+    check(){
         let sCase = angular.copy(this.case);
         this.onCheck({
             $event: sCase
         });
+        return sCase.isChecked;
     }
 }
 
