@@ -3,14 +3,17 @@ class SoundCaseController{
     }
 
     $onChange(changes){
-        console.log(changes);
+        let sCase = angular.copy(this.case);
+        this.onCheck({
+            $event: sCase
+        });
     }
 }
 
 export const SoundCase = {
     bindings : {
         case : '<',
-        exec : '&'
+        onCheck : '&'
     },
     template: require('./sound.case.component.html'),
     controller: SoundCaseController
