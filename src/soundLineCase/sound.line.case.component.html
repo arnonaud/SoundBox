@@ -1,5 +1,5 @@
 <div>
-    <button>SUPPRIMER</button>
-    <p>Nom : {{$ctrl.title}}</p>
+    <a ng-click="$ctrl.clear()"><span class="glyphicon glyphicon-trash"></span></a>
+    <p>{{ $ctrl.title }}</p>
     <input type="range">
 </div>
