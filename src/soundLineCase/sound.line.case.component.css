@@ -1,3 +1,7 @@
 sound-line-case{
-    width:100px;
+    display:block;
+}
+
+sound-line-case input[type=range]{
+    width:40%;
 }

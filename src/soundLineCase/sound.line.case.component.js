@@ -1,3 +1,5 @@
+import css from './sound.line.case.component.css';
+
 class SoundLineCaseController{
     constructor(){}
      $onInit(){
