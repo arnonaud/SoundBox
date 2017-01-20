@@ -7,6 +7,7 @@ class SoundBoxController{
             {sound:'./sounds/openhat-tight.wav',id:3},
             {sound:'./sounds/tom-rototom.wav',id:4}
         ]
+        this.play=false;
     }
     clearSound(id){
         this.sounds = this.sounds.filter(s => s.id !== id);

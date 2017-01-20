@@ -2,11 +2,6 @@ class TimeLineController {
     constructor() {
 
     }
-<<<<<<< 86b3888c6630f13e82e47cab855c7d3abdb4c0ba
-    $onInit(){
-        this.cases=[{id:1},{id:2}];
-    }
-=======
 
     $onInit() {
         this.cases = [];
@@ -49,13 +44,12 @@ class TimeLineController {
         }
     }
 
-
->>>>>>> creation des fonctions de timeline
 }
 
 export const TimeLine = {
     bindings: {
-        sound:'<'
+        sound:'<',
+        play:'<'
     },
     template: require('./time.line.component.html'),
     controller: TimeLineController

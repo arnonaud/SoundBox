@@ -12,7 +12,8 @@ class SoundLineController {
 export const SoundLine = {
     bindings: {
         sound: '<',
-        onDelete:'&'
+        onDelete:'&',
+        play:'<'
     },
     template: require('./sound.line.component.html'),
     controller: SoundLineController

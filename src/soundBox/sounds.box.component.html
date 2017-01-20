@@ -1,1 +1,2 @@
-<sound-line on-delete="$ctrl.clearSound($event)" sound="sound" ng-repeat="sound in $ctrl.sounds"></sound-line>
+<sound-line play="$ctrl.play" on-delete="$ctrl.clearSound($event)" sound="sound" ng-repeat="sound in $ctrl.sounds"></sound-line>
+<play-box play="$ctrl.play"></play-box>
