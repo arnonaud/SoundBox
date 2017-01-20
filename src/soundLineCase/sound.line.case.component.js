@@ -10,9 +10,6 @@ class SoundLineCaseController{
         this.onDelete()
     }
 
-    changeVolume(){
-        console.log(this.sound.vol);
-    }
 }
 
 export const SoundLineCase = {
