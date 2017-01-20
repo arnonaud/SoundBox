@@ -13,7 +13,8 @@ export const SoundLine = {
     bindings: {
         sound: '<',
         onDelete:'&',
-        play:'<'
+        play:'<',
+        bpm:'<'
     },
     template: require('./sound.line.component.html'),
     controller: SoundLineController

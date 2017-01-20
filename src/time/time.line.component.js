@@ -1,6 +1,7 @@
 class TimeLineController {
     constructor($interval) {
         this.$interval=$interval;
+        this.a = 0;
     }
 
     $onInit() {
@@ -13,30 +14,39 @@ class TimeLineController {
             })
         }
         this.audio = new Audio(this.sound.sound);
+        
     }
 
     $onChanges(changes) {
-        console.log('Changes ===>', changes.play.currentValue);
-        if (changes.play.currentValue) {
-        var a=0;
+        if(changes.bpm && changes.bpm.currentValue){
+           if(changes.bpm.currentValue !== changes.bpm.previousValue){
+               this.$interval.cancel(this.myInterval);
+               this.launch();
+           } 
+         
+        }
+        if (changes.play && changes.play.currentValue) {
+
+          this.launch();
+        }
+     
+        if (changes.play && !changes.play.currentValue) {
+            this.$interval.cancel(this.myInterval);
+        }
+    }
+
+    launch() {
            this.myInterval = this.$interval(()=>{
-               var soundCase =this.cases[a];
-               console.log(soundCase.id,soundCase.checked)
+               var soundCase =this.cases[this.a];
                if(soundCase.checked){
                     this.audio.currentTime = 0;
                     this.audio.play();
                }
-                a++;
-               if(a===10){
-                   a=0
+                this.a++;
+               if(this.a===10){
+                   this.a=0
                 }
-           },500)
-          
-        }
-        console.log(this.myInterval);
-        if (!changes.play.currentValue) {
-            this.$interval.cancel(this.myInterval);
-        }
+           },(60000/this.bpm))        
     }
 
     eventOnCheck(soundCase) {
@@ -55,13 +65,7 @@ class TimeLineController {
         })
     }
 
-    play() {
-        if (!this.audio.paused) {
-            this.audio.pause();
-        }
-        this.audio.currentTime = 0;
-        this.audio.play();
-    }
+   
     pause() {
         if (!this.sound.paused) {
             this.sound.pause();
@@ -73,7 +77,8 @@ export const TimeLine = {
     bindings: {
         sound: '<',
         play: '<',
-        case: '<'
+        case: '<',
+        bpm:'<'
     },
     template: require('./time.line.component.html'),
     controller: TimeLineController

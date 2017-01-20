@@ -6,7 +6,8 @@ class PlayBoxController{
 }
 export const PlayBox = {
     bindings:{
-        play:'='
+        play:'=',
+        bpm:'='
     },
     template: require('./play.box.component.html'),
     controller:PlayBoxController

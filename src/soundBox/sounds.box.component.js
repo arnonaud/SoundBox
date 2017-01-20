@@ -8,6 +8,7 @@ class SoundBoxController{
             {sound:'./sounds/tom-rototom.wav',id:4}
         ]
         this.play=false;
+        this.bpm=100;
     }
     clearSound(id){
         this.sounds = this.sounds.filter(s => s.id !== id);
