@@ -7,13 +7,14 @@ class SoundLineCaseController{
      }
 
     clear(){
-        console.log("clear sound-linr case");
+        this.onDelete()
     }
 }
 
 export const SoundLineCase = {
       bindings:{
-        sound:'<'
+        sound:'<',
+        onDelete:'&'
     },
     template : require('./sound.line.case.component.html'),
     controller :SoundLineCaseController
