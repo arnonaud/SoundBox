@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --content-base public --hot --inline --history-api-fallback",
-    "api": "json-server data.json"
+    "start": "webpack-dev-server --content-base public --hot --inline --history-api-fallback"
   },
   "author": "",
   "license": "ISC",
@@ -28,7 +27,6 @@
     "angular-route": "^1.6.1",
     "angular-ui-bootstrap": "^2.4.0",
     "css-loader": "^0.26.1",
-    "md5": "^2.2.1",
     "style-loader": "^0.13.1"
   }
 }
