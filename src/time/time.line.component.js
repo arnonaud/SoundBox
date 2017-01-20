@@ -15,18 +15,17 @@ class TimeLineController {
 
 
     }
-    eventOnChecked(soundCase) {
+    eventOnCheck(soundCase) {
+        console.log('SoundCase ==>', soundCase);
         return this.cases[soundCases.id] = soundCase;
+
     }
 
     playSound() {
         this.cases.map((soundCase) => {
-            cases[soundCase.id].isPlayed = true;
-
             if (soundCase.checked) {
-                //jouer le son du soundcase à l'index
-
-            } else {
+                cases[soundCase.id].isPlayed = true;
+                play();
 
             }
         })
