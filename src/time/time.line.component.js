@@ -6,7 +6,7 @@ class TimeLineController {
     $onInit() {
         this.cases = [];
         for (var i = 0; i < 10; i++) {
-            cases.push({
+            this.cases.push({
                 id: i,
                 checked: false,
                 isPlayed: false
