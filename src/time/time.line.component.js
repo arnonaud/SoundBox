@@ -9,5 +9,5 @@ export const TimeLine = {
         case: '<'
     },
     template: require('./time.line.component.html'),
-    controllerTimeLineController
+    controller: TimeLineController
 }
