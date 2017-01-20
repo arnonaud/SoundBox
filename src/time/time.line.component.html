@@ -1,7 +1,12 @@
 <table>
     <tr>
+<<<<<<< 86b3888c6630f13e82e47cab855c7d3abdb4c0ba
         <td ng-repeat="case in $ctrl.cases"> ici sound case
             <sound-case case="case"></sound-case>
+=======
+        <td ng-repeat="case in $ctrl.cases track by $index"> ici sound case
+            <sound-case case="case" on-check="$ctrl.eventOnCheck($event)"></sound-case>
+>>>>>>> creation des fonctions de timeline
         </td>
     </tr>
 </table>
