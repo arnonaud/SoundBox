@@ -1,6 +1,6 @@
 class TimeLineController {
-    constructor() {
-
+    constructor($interval) {
+        this.$interval=$interval;
     }
 
     $onInit() {
@@ -18,11 +18,24 @@ class TimeLineController {
     $onChanges(changes) {
         console.log('Changes ===>', changes.play.currentValue);
         if (changes.play.currentValue) {
-            if (!this.audio.paused) {
-                this.audio.pause();
-            }
-            this.audio.currentTime = 0;
-            this.audio.play();
+        var a=0;
+           this.myInterval = this.$interval(()=>{
+               var soundCase =this.cases[a];
+               console.log(soundCase.id,soundCase.checked)
+               if(soundCase.checked){
+                    this.audio.currentTime = 0;
+                    this.audio.play();
+               }
+                a++;
+               if(a===10){
+                   a=0
+                }
+           },500)
+          
+        }
+        console.log(this.myInterval);
+        if (!changes.play.currentValue) {
+            this.$interval.cancel(this.myInterval);
         }
     }
 
