@@ -1,5 +1,5 @@
 <div>
     <a class="btn btn-danger" ng-click="$ctrl.clear()"><span class="glyphicon glyphicon-trash"></span></a>
     <p>{{ $ctrl.title }}</p>
-    <input type="range" class="form-control" ng-model="$ctrl.speed" min="0.5" max="1.5" step=".1" >
+    <input type="range" class="form-control" ng-model="$ctrl.sound.vol" ng-change="$ctrl.changeVolume()" min="0.0" max="1.0" step=".1" >
 </div>

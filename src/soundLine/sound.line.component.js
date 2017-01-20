@@ -6,6 +6,7 @@ class SoundLineController {
         this.onDelete({$event:id})
     }
     
+    //this.sound.vol
 }
 
 export const SoundLine = {
