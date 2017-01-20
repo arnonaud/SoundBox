@@ -21,9 +21,10 @@ class TimeLineController {
 
     playSound() {
         this.cases.map((soundCase) => {
+            cases[soundCase.id].isPlayed = true;
+
             if (soundCase.checked) {
                 //jouer le son du soundcase à l'index
-
 
             } else {
 
@@ -43,13 +44,13 @@ class TimeLineController {
             this.sound.pause();
         }
     }
-
 }
 
 export const TimeLine = {
     bindings: {
-        sound:'<',
-        play:'<'
+        sound: '<',
+        play: '<',
+        case: '<'
     },
     template: require('./time.line.component.html'),
     controller: TimeLineController
