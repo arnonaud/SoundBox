@@ -1,3 +1,5 @@
+import css from './sound.case.component.css';
+
 class SoundCaseController{
     constructor(){
     }
