@@ -1,11 +1,13 @@
-class SoundLineController{
-    constructor(){}
+class SoundLineController {
+    constructor() {
+
+    }
 }
 
 export const SoundLine = {
-    bindings:{
-        sound:'<'
+    bindings: {
+        sound: '<'
     },
-    template : require('./sound.line.component.html'),
-    controller :SoundLineController
+    template: require('./sound.line.component.html'),
+    controller: SoundLineController
 }
