@@ -12,12 +12,23 @@ class TimeLineController {
                 isPlayed: false
             })
         }
-
-
+        this.audio = new Audio(this.sound.sound);
     }
+
+    $onChanges(changes) {
+        console.log('Changes ===>', changes.play.currentValue);
+        if (changes.play.currentValue) {
+            if (!this.audio.paused) {
+                this.audio.pause();
+            }
+            this.audio.currentTime = 0;
+            this.audio.play();
+        }
+    }
+
     eventOnCheck(soundCase) {
-        console.log('SoundCase ==>', soundCase);
-        return this.cases[soundCases.id] = soundCase;
+        //console.log('SoundCase ==>', soundCase);
+        this.cases[this.cases.indexOf(soundCase)] = soundCase;
 
     }
 
@@ -32,11 +43,11 @@ class TimeLineController {
     }
 
     play() {
-        if (!this.sound.paused) {
-            this.sound.pause();
+        if (!this.audio.paused) {
+            this.audio.pause();
         }
-        this.sound.currentTime = 0;
-        this.sound.play();
+        this.audio.currentTime = 0;
+        this.audio.play();
     }
     pause() {
         if (!this.sound.paused) {
