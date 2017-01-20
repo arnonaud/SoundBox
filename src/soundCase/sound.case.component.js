@@ -5,6 +5,7 @@ class SoundCaseController{
     }
 
     $onChange(changes){
+        console.log(changes, this.onCheck);
         let sCase = angular.copy(this.case);
         this.onCheck({
             $event: sCase
