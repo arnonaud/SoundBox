@@ -1,1 +1,2 @@
-<button ng-click="$ctrl.play=!$ctrl.play">play</button>
+<button class="btn btn-lg btn-success" ng-if="!$ctrl.play" ng-click="$ctrl.play=!$ctrl.play">Play</button>
+<button class="btn btn-lg btn-warning" ng-if="$ctrl.play" ng-click="$ctrl.play=!$ctrl.play">Stop</button>
